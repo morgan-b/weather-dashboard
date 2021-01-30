@@ -6,7 +6,9 @@ var windEl = document.querySelector('#wind');
 var uvEl = document.querySelector('#uv');
 var citySearches = [];
 var cityNames = [];
-
+let weatherType = ["Thunderstorm", "Drizzle", "Rain", "Snow", "Mist", "Smoke", "Haze", "Dust", "Fog", "Sand", "Dust", "Ash", "Squall", "Tornado"]
+let weatherIcon = ["11d","09d","10d","13d","50d","50d","50d","50d","50d","50d","50d","50d","50d","50d",]
+let iconURL = "http://openweathermap.org/img/wn/"
 function handleSearchFormSubmit(event) {
     event.preventDefault();
 
@@ -51,28 +53,48 @@ function handleSearchFormSubmit(event) {
                     var date = new Date(time1000);
                     var newDate = date.toISOString().substring(5, 10);
                     $(".dayofweek")[i].textContent = newDate;
-                   
+
+
                 }
                 for (i = 0; i < 5; i++) {
-                  var temp = 'Temperature: ' + (data.daily[i].temp.max) + '°F ';
-                    $(".tempday")[i].textContent = temp;}
-                    for (i = 0; i < 5; i++) {
-                        var humid = 'Humidity: ' + (data.daily[i].humidity) + '% ';
-                          $(".humidday")[i].textContent = humid;}
+                    var temp = 'Temperature: ' + (data.daily[i].temp.max) + '°F ';
+                    $(".tempday")[i].textContent = temp;
+                }
+                for (i = 0; i < 5; i++) {
+                    var humid = 'Humidity: ' + (data.daily[i].humidity) + '% ';
+                    $(".humidday")[i].textContent = humid;
+                }
+                for (i = 0; i < 5; i++) {
+                    var main = data.daily[i].weather[0].icon;
+                    console.log(main)
+                    var URL = "http://openweathermap.org/img/wn/" + main + "@2x.png"
+                    $(".icon")[i].src =  URL 
+                    
+                }
                 //var data}
+                var time1000 = eval(data.daily[0].dt * 1000);
+                var date = new Date(time1000);
+                var newDate = date.toISOString().substring(5, 10);
+                resultTextEl.append(" " + newDate)
+               
+
             })
-           
-                
-            }
+
     }
+}
+
+
+//
 
 
 
 
 
-    //.catch(function () {
-    // catch any errors
-    //});
+
+
+//.catch(function () {
+// catch any errors
+//});
 
 
 
