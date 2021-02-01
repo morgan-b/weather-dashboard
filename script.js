@@ -78,11 +78,20 @@ function fetchData(newCity) {
             //add current weather to html
             var URLmain = "http://openweathermap.org/img/wn/" + mainicon + "@2x.png";
             tempEl.textContent = 'Temperature: ' + data.current.temp + '°F ';
-            uvEl.textContent = 'UV Index: ' + data.current.uvi + '%';
+            uvEl.textContent = 'UV Index: ' + data.current.uvi;
             windEl.textContent = 'Wind Speed: ' + data.current.wind_speed + ' MPH';
             humidEl.textContent = 'Humidity: ' + data.current.humidity + '%';
             mainIcon.src = URLmain;
+            if (data.current.uvi <= 3) {
+                uvEl.style.color = 'green'
+            }
+            else if (data.current.uvi > 3 && data.current.uvi <= 7) {
+                uvEl.style.color = 'orange'
+            }
 
+            else if (data.current.uvi > 7) {
+                uvEl.style.color = 'red'
+            }
             //get date into a user friendly format
             for (i = 0; i < 5; i++) {
                 var time1000 = eval(data.daily[i].dt * 1000);
