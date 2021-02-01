@@ -6,6 +6,7 @@ This application was requested to be a weather dashboard that will run in the br
 
 This app will use [OpenWeather API](https://openweathermap.org/api) to retrieve weather data for cities. This app also uses the [Position Stack API](https://positionstack.com/documentation) to retrieve location data for cities.
 
+[Link to active application](https://morgan-b.github.io/weather-dashboard/)
 ## Requirements
 
 The application requested meets the below user story:
