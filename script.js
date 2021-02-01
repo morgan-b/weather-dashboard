@@ -83,14 +83,14 @@ function fetchData(newCity) {
             humidEl.textContent = 'Humidity: ' + data.current.humidity + '%';
             mainIcon.src = URLmain;
             if (data.current.uvi <= 3) {
-                uvEl.style.color = 'green'
+                uvEl.style.color = 'green';
             }
             else if (data.current.uvi > 3 && data.current.uvi <= 7) {
-                uvEl.style.color = 'orange'
+                uvEl.style.color = 'orange';
             }
 
             else if (data.current.uvi > 7) {
-                uvEl.style.color = 'red'
+                uvEl.style.color = 'red';
             }
             //get date into a user friendly format
             for (i = 0; i < 5; i++) {
