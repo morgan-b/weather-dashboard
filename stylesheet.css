@@ -7,5 +7,14 @@ body {
   
 }
 .dailyweather {
-padding:1%
+padding:1%;
 }
+.day {
+  margin: 2%;
+  
+}
+.daily {
+  background-color: #33E9FF;
+  border-radius:5%;
+}
+

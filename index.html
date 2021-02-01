@@ -14,7 +14,7 @@
 
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Weather Dashboard</a>
+            <h1 class="navbar-brand">Weather Dashboard</h1>
 
 
         </div>
@@ -26,22 +26,24 @@
             <div class="col-2">
                 <form class="d-flex">
                     <input id="search-input" class="form-input w-100" type="text" placeholder="Search!">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                    <button class="btn btn-info" type="submit">Search</button>
                 </form>
 
-                <div class="card">
-                    <ul class="list-group list-group-flush">
+                
+                    <div class="btn-group-vertical" role="group"> </div>
 
-                    </ul>
-                </div>
+                 
+                
 
             </div>
 
             <div class="col-10">
-                <Div class="container-fluid">
+                <div class="container-fluid">
                     <div class="card">
                         <div class="card-body">
                             <h1 class="card-title">City</h1>
+                            <h2 class="card-text dateToday" id="dateToday"> </h2>
+                            <img class="icontoday" src="">
                             <p class="card-text" id="temp">Temperature: </p>
                             <p class="card-text" id="humid">Humidity: </p>
                             <p class="card-text" id="wind">Wind Speed: </p>
@@ -52,80 +54,77 @@
 
 
                     <div class="row dailyweather">
-                        <div class="col-10">
+                        <div class="col-12">
 
                             <h3>5-Day Forecast</h3>
                         </div>
+                        <div class="card-group col-12">
 
-                        <div class="row">
-                            <div class="col">
-                                <div class="card day">
-                                    <div class="card-body">
-                                        <h5 class="card-title dayofweek">Weather</h5>
-                                        <img class="icon" src="">
-                                        <p class="card-text tempday" id="tempday">Temperature: </p>
-                                        <p class="card-text humidday" id="humidday">Humidity: </p>
+                            <div class="card day">
+                                <div class="card-body daily">
+                                    <h5 class="card-title dayofweek">Weather</h5>
+                                    <img class="icon" src="">
+                                    <p class="card-text tempday" id="tempday">Temperature: </p>
+                                    <p class="card-text humidday" id="humidday">Humidity: </p>
 
-                                    </div>
                                 </div>
-                            </div>
-                            <div class="col">
-                                <div class="card day">
-                                    <div class="card-body">
-                                        <h5 class="card-title dayofweek">Weather</h5>
-                                        <img class="icon" src="">
-                                        <p class="card-text tempday" id="tempday">Temperature: </p>
-                                        <p class="card-text humidday" id="humidday">Humidity: </p>
 
-                                    </div>
-                                </div>
                             </div>
-                            <div class="col">
-                                <div class="card day">
-                                    <div class="card-body">
-                                        <h5 class="card-title dayofweek">Weather</h5>
-                                        <img class="icon" src="">
-                                        <p class="card-text tempday" id="tempday">Temperature: </p>
-                                        <p class="card-text humidday" id="humidday">Humidity: </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card day">
-                                    <div class="card-body">
-                                        <h5 class="card-title dayofweek">Weather</h5>
-                                        <img class="icon" src="">
-                                        <p class="card-text tempday" id="tempday">Temperature: </p>
-                                        <p class="card-text humidday" id="humidday">Humidity: </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card day">
-                                    <div class="card-body">
-                                        <h5 class="card-title dayofweek">Weather</h5>
-                                        <img class="icon" src="">
-                                        <p class="card-text tempday" id="tempday">Temperature: </p>
-                                        <p class="card-text humidday" id="humidday">Humidity: </p>
 
-                                    </div>
+                            <div class="card day">
+                                <div class="card-body daily">
+                                    <h5 class="card-title dayofweek">Weather</h5>
+                                    <img class="icon" src="">
+                                    <p class="card-text tempday" id="tempday">Temperature: </p>
+                                    <p class="card-text humidday" id="humidday">Humidity: </p>
+
+                                </div>
+
+                            </div>
+
+                            <div class="card day">
+                                <div class="card-body daily">
+                                    <h5 class="card-title dayofweek">Weather</h5>
+                                    <img class="icon" src="">
+                                    <p class="card-text tempday" id="tempday">Temperature: </p>
+                                    <p class="card-text humidday" id="humidday">Humidity: </p>
                                 </div>
                             </div>
+
+
+                            <div class="card day">
+                                <div class="card-body daily">
+                                    <h5 class="card-title dayofweek">Weather</h5>
+                                    <img class="icon" src="">
+                                    <p class="card-text tempday" id="tempday">Temperature: </p>
+                                    <p class="card-text humidday" id="humidday">Humidity: </p>
+                                </div>
+                            </div>
+
+                            <div class="card day">
+                                <div class="card-body daily">
+                                    <h5 class="card-title dayofweek">Weather</h5>
+                                    <img class="icon" src="">
+                                    <p class="card-text tempday" id="tempday">Temperature: </p>
+                                    <p class="card-text humidday" id="humidday">Humidity: </p>
+
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </Div>
             </div>
         </div>
 
-        </div>
-        </div>
+
 
 
     </main><!-- /.container -->
 
-
-    <script src='/script.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src='/script.js'></script>
+
 
 </body>
 
