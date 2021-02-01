@@ -9,6 +9,7 @@ body {
 .dailyweather {
 padding:1%;
 }
+
 .day {
   margin: 2%;
   
@@ -18,3 +19,10 @@ padding:1%;
   border-radius:5%;
 }
 
+.citysearch {
+  margin: 5%;
+}
+
+.button-group {
+  width: 100%;
+}
