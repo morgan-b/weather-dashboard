@@ -115,7 +115,7 @@ function fetchData(newCity) {
             for (i = 0; i < 5; i++) {
                 var main = data.daily[i].weather[0].icon;
                 console.log(main);
-                var URL = "http://openweathermap.org/img/wn/" + main + "@2x.png";
+                var URL = "https://openweathermap.org/img/wn/" + main + "@2x.png";
                 $(".icon")[i].src = URL;
 
             }
@@ -145,7 +145,7 @@ $(".btn-group-vertical").click(function (event) {
     var searchInputVal = getName[searchInputValID];
     resultTextEl.textContent = searchInputVal;
     console.log(searchInputVal);
-    queryString = 'http://api.positionstack.com/v1/forward?access_key=e1a330256e0a681d7bdee48bcc2240f7&query=' + searchInputVal + '&country=US&limit=1&fields=results.latitude,results.longitude';
+    queryString = 'https://api.positionstack.com/v1/forward?access_key=e1a330256e0a681d7bdee48bcc2240f7&query=' + searchInputVal + '&country=US&limit=1&fields=results.latitude,results.longitude';
     getLocation(queryString);
 
 });
