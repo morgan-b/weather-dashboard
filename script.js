@@ -40,7 +40,8 @@ function handleSearchFormSubmit(event) {
     $(".btn-group-vertical").append("<button type= 'button' class='btn btn-info btn-lg btn-block citysearch' id='" + (cityNames.length - 1) + "'>" + searchInputVal + "</button>");
     resultTextEl.textContent = searchInputVal;
 
-    var queryString = 'https://api.positionstack.com/v1/forward?access_key=e1a330256e0a681d7bdee48bcc2240f7&query=' + searchInputVal + '&country=US&limit=1&fields=results.latitude,results.longitude';
+    var queryString = 'https://api.openweathermap.org/data/2.5/weather?q=' + searchInputVal + '&appid=aad99d1e4f7865403e9f1df2cd7d627c';
+    
     getLocation(queryString);
 }
 
@@ -56,8 +57,8 @@ function getLocation(queryString) {
         })
         .then(function (data) {
             console.log(data);
-            var lat = data.data[0].latitude;
-            var lon = data.data[0].longitude;
+            var lat = data.coord.lat;
+            var lon = data.coord.lon;
             var newCity = 'https://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon=' + lon + '&appid=aad99d1e4f7865403e9f1df2cd7d627c&units=imperial';
             citySearches.push(newCity);
             localStorage.setItem("locations", JSON.stringify(cityNames));
