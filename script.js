@@ -40,7 +40,7 @@ function handleSearchFormSubmit(event) {
     $(".btn-group-vertical").append("<button type= 'button' class='btn btn-info btn-lg btn-block citysearch' id='" + (cityNames.length - 1) + "'>" + searchInputVal + "</button>");
     resultTextEl.textContent = searchInputVal;
 
-    var queryString = 'http://api.positionstack.com/v1/forward?access_key=e1a330256e0a681d7bdee48bcc2240f7&query=' + searchInputVal + '&country=US&limit=1&fields=results.latitude,results.longitude';
+    var queryString = 'https://api.positionstack.com/v1/forward?access_key=e1a330256e0a681d7bdee48bcc2240f7&query=' + searchInputVal + '&country=US&limit=1&fields=results.latitude,results.longitude';
     getLocation(queryString);
 }
 
@@ -64,6 +64,7 @@ function getLocation(queryString) {
             fetchData(newCity);
 
         });
+        
 
 }
 // fetch data from openweather api 
@@ -76,7 +77,7 @@ function fetchData(newCity) {
             console.log(data);
             var mainicon = data.current.weather[0].icon;
             //add current weather to html
-            var URLmain = "http://openweathermap.org/img/wn/" + mainicon + "@2x.png";
+            var URLmain = "https://openweathermap.org/img/wn/" + mainicon + "@2x.png";
             tempEl.textContent = 'Temperature: ' + data.current.temp + '°F ';
             uvEl.textContent = 'UV Index: ' + data.current.uvi;
             windEl.textContent = 'Wind Speed: ' + data.current.wind_speed + ' MPH';
