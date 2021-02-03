@@ -64,6 +64,9 @@ function getLocation(queryString) {
             localStorage.setItem("locations", JSON.stringify(cityNames));
             fetchData(newCity);
 
+        })
+        .catch(function () {
+            alert("Please search again");
         });
         
 
@@ -74,6 +77,9 @@ function fetchData(newCity) {
     fetch(newCity)
         // Convert data to json
         .then(function (resp) { return resp.json(); })
+        .catch(function () {
+            alert("Please search again");
+        })
         .then(function (data) {
             console.log(data);
             var mainicon = data.current.weather[0].icon;
@@ -130,9 +136,7 @@ function fetchData(newCity) {
 
 
         })
-        .catch(function () {
-            alert("Please search again");
-        });
+      
 
 }
 
@@ -147,7 +151,7 @@ $(".btn-group-vertical").click(function (event) {
     var searchInputVal = getName[searchInputValID];
     resultTextEl.textContent = searchInputVal;
     console.log(searchInputVal);
-    queryString = 'https://api.positionstack.com/v1/forward?access_key=e1a330256e0a681d7bdee48bcc2240f7&query=' + searchInputVal + '&country=US&limit=1&fields=results.latitude,results.longitude';
+    queryString = 'https://api.openweathermap.org/data/2.5/weather?q=' + searchInputVal + '&appid=aad99d1e4f7865403e9f1df2cd7d627c';
     getLocation(queryString);
 
 });
